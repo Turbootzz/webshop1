@@ -1,2 +1,2 @@
-# Webshop1
- First ever Webshop project as student.
+# webshop1
+ This is my first webshop.

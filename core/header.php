@@ -1,6 +1,7 @@
-<?php
+<?php // de database word geïmporteert hiermee
     include('core/db_connect.php');
 ?>
+ <!-- hier header geplaatst -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

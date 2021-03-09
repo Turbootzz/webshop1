@@ -2,7 +2,8 @@
     include('core/header.php');
     include('core/checklogin_admin.php');
 ?>
-<ul>
+<!-- the menu -->
+<ul> 
     <li><a href="users/">Gebruikers</a></li>
     <li><a href="orders/">Bestellingen</a></li>
     <li><a href="producten">Producten</a></li>

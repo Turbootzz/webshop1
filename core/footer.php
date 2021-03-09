@@ -1,4 +1,4 @@
-
+<!-- hier kan een footer worden geplaatst -->
     
 </body>
 </html>

@@ -5,7 +5,7 @@
         //default user: test@test.nl
         //default password: test123
         $email = $con->real_escape_string($_POST['email']);
-
+// bekijkt of de email bestaat
         $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user WHERE email = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
@@ -16,7 +16,7 @@
                 $liqry->store_result();
                 $liqry->fetch();
                 if($liqry->num_rows == '1'){
-
+                    //als het bestaat in de database dan krijgt je een verification
                     $token = sha1(mt_rand(1, 90000) . 'WEBSHOP2021-1wdv');
 
                     $url = BASEURL_CMS.'verify_password.php?token='.$token;
@@ -36,7 +36,7 @@
                     echo "Hierbij de nieuwe url:<br>";
                     echo "<a href='{$url}'>".$url."</a>";
                     exit();
-                } else {
+                } else { //als het fout gaat
                     echo "ERROR tijdens inloggen";
                 }
             }
@@ -44,6 +44,7 @@
         }
     }
 ?>
+<!-- De login -->
 <form action="forgot_password.php" method="post">
     <input type="email" name="email" id="" placeholder="Email">
     <input type="submit" name="submit" value="Request password">
