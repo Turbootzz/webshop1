@@ -1,0 +1,20 @@
+//alle active producten uit category
+$sql = "SELECT category.category_id, category.name, category.description FROM category\n"
+
+    . "WHERE category.active = 1";
+
+
+//alle active producten uit product
+$sql = "SELECT product.product_id, product.name, product.description, product.price FROM product\n"
+
+    . "WHERE product.active = 1";
+
+//laad de images erbij
+
+$sql = "SELECT * FROM product\n"
+
+    . "INNER JOIN\n"
+
+    . "product_image ON\n"
+
+    . "product.product_id = product_image.product_image_id";
