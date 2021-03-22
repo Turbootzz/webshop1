@@ -12,3 +12,8 @@
     <title>Admin Panel - Webshop</title>
 </head>
 <body>
+<nav>
+    <ul>
+        <li><a href="products.php">Producten</a></li>
+    </ul>
+</nav>
