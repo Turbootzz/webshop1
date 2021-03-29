@@ -1,7 +1,20 @@
 <?php
+    // require_once("config/connect.php");
     include('core/header.php');
 ?>
+
 Homepage
+
+    <?php //foto uploaden 
+    // $result = $conn->query("SELECT foto FROM fotoalbums");
+    // if ($result != false) {
+    //     while ($row = $result->fetch_assoc()) {
+    //         ?>
+             <!-- <img src="assets/upload/<?php echo $row['foto'];?>" alt="" style="width:100px;" /> -->
+             <?php
+    //     }
+    //     $result->free();
+    //}?>
 
 <h2>Categorie overzicht</h2>
 <?php

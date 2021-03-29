@@ -1,0 +1,5 @@
+maak category:
+INSERT INTO category (name, description, active) VALUES ('tafellamp', 'Tafellampen zijn binnenlampen voor op tafel.', 1);
+
+maak product
+INSERT INTO product (name, description, category_id, price, color, weight, active) VALUES ('Arstid', 'De lampenkap van textiel geeft een zacht en decoratief licht.\r\n<br><br>\r\nLichtbron wordt apart verkocht. IKEA adviseert de led-lamp E27 globevorm opaalwit.\r\n<br><b>\r\nGebruik een opalen lichtbron als je een gewone lampenkap of lamp hebt en je een gelijkmatig, gespreid licht wilt.\r\n<br><br>\r\nVoorzien van trekschakelaar.\r\n<br><br>\r\nDit product is CE-gecertificeerd.\r\n\r\nGoed te completeren met andere lampen uit dezelfde serie.', 1, '39.95', 'wit', '300', 1);
