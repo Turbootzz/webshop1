@@ -1,6 +1,6 @@
 <?php
     //haalt die code binnen
-    include('../core/db_connect.php');
+    include('../../core/db_connect.php');
 ?>
 <!-- Basis van elke pagina van admin-->
 <!DOCTYPE html>

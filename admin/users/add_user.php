@@ -4,7 +4,6 @@
     include('../core/header.php');
     include('../core/checklogin_admin.php');
 ?>
-sssssssssss
 
 <?php
 //prettyDump($_POST);
