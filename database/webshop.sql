@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 mrt 2021 om 12:35
+-- Gegenereerd op: 19 apr 2021 om 15:14
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -62,10 +62,35 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `name`, `description`, `active`) VALUES
-(1, 'tafellamp', 'Tafellampen zijn binnenlampen ', 1),
-(2, 'buitenlamp', 'Buitenlampen zijn lampen voor ', 1),
-(3, 'designlamp', 'Design lampen zijn mooie lampe', 1),
-(4, 'bureaulamp', 'Bureaulamp is lekker voor op j', 1);
+(1, 'Apple', 'Phones from Apple', 1),
+(2, 'Samsung', 'Phones from Samsung.', 1),
+(3, 'Huawei', 'Phones from Huawei', 1),
+(4, 'OnePlus', 'Phones from OnePlus', 1),
+(5, 'Google', 'Phones from Google', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `customer`
+--
+
+CREATE TABLE `customer` (
+  `customer_id` int(11) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `middle_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `house_number` int(11) NOT NULL,
+  `house_number_addon` int(11) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `emailadres` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `newsletter_subscription` tinyint(1) NOT NULL,
+  `date_added` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -78,9 +103,9 @@ CREATE TABLE `product` (
   `name` varchar(255) NOT NULL,
   `description` varchar(5000) NOT NULL,
   `category_id` int(11) UNSIGNED NOT NULL,
-  `price` decimal(4,2) NOT NULL,
+  `price` decimal(6,2) NOT NULL,
   `color` varchar(30) NOT NULL,
-  `weight` decimal(4,2) NOT NULL,
+  `weight` decimal(6,2) NOT NULL,
   `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -89,15 +114,16 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `name`, `description`, `category_id`, `price`, `color`, `weight`, `active`) VALUES
-(1, 'Arstid', 'De lampenkap van textiel geeft', 1, '40.00', 'wit', '99.99', 1),
-(2, 'buitenlamp', 'De lampenkap van textiel geeft', 2, '40.00', 'wit', '99.99', 1),
-(3, 'gans-lamp', 'De lampenkap van textiel geeft', 1, '40.00', 'wit', '99.99', 1),
-(4, 'giraf-lamp', 'De lampenkap van textiel geeft', 3, '40.00', 'wit', '99.99', 1),
-(5, 'hektar', 'De lampenkap van textiel geeft', 4, '40.00', 'wit', '99.99', 1),
-(6, 'jesse', 'De lampenkap van textiel geeft', 1, '40.00', 'wit', '99.99', 1),
-(7, 'lampje', 'De lampenkap van textiel geeft', 1, '40.00', 'wit', '99.99', 1),
-(8, 'llahra', 'De lampenkap van textiel geeft', 2, '40.00', 'wit', '99.99', 1),
-(9, 'struisvogel-lamp', 'De lampenkap van textiel geeft', 3, '40.00', 'wit', '99.99', 1);
+(1, 'IPhone 12', 'For the apple users. With the newest features.', 1, '900.00', 'OceanBlue', '164.00', 1),
+(2, 'IPhone SE', 'The brains of IPhone 8 but smaller and cheaper', 1, '448.00', 'Black', '113.00', 1),
+(3, 'Samsung S20', 'In-screen fingerprint, good camera and more!', 2, '600.00', 'black', '163.00', 1),
+(4, 'Samsung S10', 'In screen Fingerprint and face ID triple lens camera', 2, '360.00', 'black', '157.00', 1),
+(5, 'Huawei P20 Pro', 'The chinese phone thats really good', 3, '174.00', 'cyan', '165.00', 1),
+(6, 'Huawei P40 Pro', 'The newest version of Huawei', 3, '240.00', 'cyan', '175.00', 1),
+(7, 'OnePlus 9', 'The OnePlus 9 that just released with de nicest and best features!', 4, '750.00', 'Purple', '192.00', 1),
+(8, 'OnePlus 6T', 'High resolution screen with Fingerprint', 4, '300.00', 'red', '185.00', 1),
+(9, 'Pixel 5', 'Stock Android, Good camera and newest features.', 5, '720.00', 'black', '151.00', 1),
+(10, 'Pixel 4', 'Nice good camera with stock Android', 5, '600.00', 'black', '162.00', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +170,12 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indexen voor tabel `customer`
+--
+ALTER TABLE `customer`
+  ADD UNIQUE KEY `customer_id` (`customer_id`);
+
+--
 -- Indexen voor tabel `product`
 --
 ALTER TABLE `product`
@@ -169,13 +201,19 @@ ALTER TABLE `admin_user`
 -- AUTO_INCREMENT voor een tabel `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT voor een tabel `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `product_image`
