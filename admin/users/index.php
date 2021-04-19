@@ -1,32 +1,39 @@
 <?php
-    
-    // onderstaand bestand wordt ingeladen
     include('../core/header.php');
     include('../core/checklogin_admin.php');
 ?>
-
-<hr>
-
-<div style="background-color: red">hallo</div>
+<table border="1">
+    <tr>
+        <td>ID2</td>
+        <td>EMAIL2</td>
+        <td>DATETIME2</td>
+    </tr>
 <?php
-        $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user");
-        if($liqry === false) {
-           echo mysqli_error($con);
-        } else{
-            $liqry->bind_result($adminId,$email);
-            if($liqry->execute()){
-                $liqry->store_result();
-                while($liqry->fetch()) {
-                    echo 'admin id :' . $adminId . " - ";
-                    echo 'email :' . $email . " - ";
-                    echo '<a href="edit_user.php?uid='.$adminId.'">edit</a><br>';
-                }
+    $sql = "SELECT admin_user_id, email, datetime FROM admin_user;";
+    $liqry = $con->prepare($sql);
+    if($liqry === false) {
+        echo mysqli_error($con);
+    } else{
+        // $liqry->bind_param('s',$email);
+        $liqry->bind_result($admin_user_id, $email, $datetime);
+        if($liqry->execute()){
+            $liqry->store_result();
+            while($liqry->fetch()){
+                ?>
+                <tr>
+                    <td>
+                        <a href="edit_user.php?user_id=<?php echo $admin_user_id;?>"><?php echo $admin_user_id;?></a>
+                    </td>
+                    <td><?php echo $email;?></td>
+                    <td><?php echo $datetime;?></td>
+                </tr>
+                <?php
             }
-            $liqry->close();
         }
-
+        $liqry->close();
+    }
 ?>
-
+</table>
 <?php
     include('../core/footer.php');
 ?>

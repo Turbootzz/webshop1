@@ -1,6 +1,6 @@
 <?php
     //haalt die code binnen
-    include('../../core/db_connect.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/webshop1/core/db_connect.php');
 ?>
 <!-- Basis van elke pagina van admin-->
 <!DOCTYPE html>

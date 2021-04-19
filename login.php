@@ -1,4 +1,6 @@
-
+<?php
+    include('core/header.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +14,8 @@
 <body>
     <div class="sidenav">
         <div class="login-main-text">
-            <h2>Eigen Webshop<br> Login Page</h2>
-            <p>Dit is een eigen CMS voor de webshop</p>
+            <h2>Webshop<br> Login Page</h2>
+            <p>Put in your info.</p>
         </div>
     </div>
     <div class="main">
@@ -29,7 +31,7 @@
                      <input type="password" class="form-control" name="field_password" placeholder="Password">
                   </div>
                   <button type="submit" class="btn btn-black">Login</button>
-                  <a href="view/register.php" class="btn btn-secondary">Registreer</a>
+                  <a href="register.php" class="btn btn-secondary">Registreer</a>
                </form>
             </div>
         </div>
