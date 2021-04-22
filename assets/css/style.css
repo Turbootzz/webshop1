@@ -212,3 +212,25 @@ main {
         max-width: 200px;
       }
   }
+
+
+  .catimgitems {
+    margin: auto;
+    text-align: center;
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 80%;
+    height: 350px;
+  }
+
+  @media screen and (max-width: 879px) {
+      .catimgitems {
+        margin: auto;
+        text-align: center;
+        display: block;
+        border-radius: 5px 5px 0 0;
+        width: 80%;
+        height: 220px;
+        max-width: 200px;
+      }
+  }

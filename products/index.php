@@ -12,28 +12,38 @@
 </nav>
 </header>
 <main>
-Overzicht van producten met ProductNaam, ProductPrijs, ProductAfbeelding en ProductCategorie
-<h2>Categorie overzicht</h2>
+<h2>Categories</h2>
 <?php
-$sql = "SELECT name, description FROM category WHERE active = 1";
-$liqry = $con->prepare($sql);
-if($liqry === false) {
+$productsql = "SELECT category.name AS categoryName, category_image.category_image AS catimageName
+FROM category
+ INNER JOIN category_image ON category.category_id = category_image.category_id 
+ WHERE category.active = 1
+ORDER BY category.category_id
+LIMIT 5";
+
+$productqry = $con->prepare($productsql);
+if($productqry === false) {
     echo mysqli_error($con);
 } else{
-    // $liqry->bind_param('s',$email);
-    $liqry->bind_result($categoryName, $categoryDescription);
-    if($liqry->execute()){
-        $liqry->store_result();
-        while($liqry->fetch()){
+    $productqry->bind_result($categoryNameProduct, $catimageName);
+    if($productqry->execute()){
+        $productqry->store_result();
+        while($productqry->fetch()){
             ?>
-            <article>
-                <h3><?php echo $categoryName;?></h3>
-                <div><?php echo $categoryDescription;?></div>
-            </article>
+            <div class="cards">
+            <a href="<?php echo BASEURL;?>products/<?php echo substr($catimageName, 0, -3);?>php"><article class="card"> <!-- I used a substr so it will remove the last 3 characters so the URL wont have spaces or will be wrong -->
+                <h3><?php echo $categoryNameProduct;?></h3>
+                    <img class="imgitems" src="<?php echo BASEURL;?>assets/img/<?php echo $catimageName?>" alt="<?php echo $categoryNameProduct?>">
+        
+                    <div class="cardtext">
+                    <figcaption>Click here</figcaption>
+                </div>
+            </article></a>
+        </div>
             <?php
         }
     }
-    $liqry->close();
+    $productqry->close();
 }
 ?>
 
