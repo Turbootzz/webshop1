@@ -43,7 +43,18 @@
 
 </div>
 <br>
-
+<?php
+$productsql = "SELECT product.price AS productPrice FROM product WHERE product.active = 1 AND product.product_id = 2";
+// the last number resembles which product it takes
+$productqry = $con->prepare($productsql);
+if($productqry === false) {
+    echo mysqli_error($con);
+} else{
+    $productqry->bind_result($productPrice);
+    if($productqry->execute()){
+        $productqry->store_result();
+        while($productqry->fetch()){
+            ?>
 <div class="detailtext">
     <h1>iPhone SE</h1>
     <hr>
@@ -58,6 +69,7 @@
     Storage: 64GB, 128GB or 256GB<br>
     Camera: 12 MP<br>
     Battery: 1642 mAh<br>
+    Price: €<?php echo $productPrice?>
 </p>
 </div>
 
@@ -72,9 +84,14 @@
 
 <!-- Specify details about the item that buyers will purchase. -->
 <input type="hidden" name="item_name" value="iPhone SE"> <!-- Change product name!-->
-<input type="hidden" name="amount" value="448"> <!-- Price !-->
+<input type="hidden" name="amount" value="<?php echo $productPrice?>"> <!-- Price !-->
 <input type="hidden" name="currency_code" value="EUR">
-
+<?php
+        }
+    }
+    $productqry->close();
+}
+?>
 <!-- Display the payment button. -->
 <input type="image" name="submit" width="20%" height="20%"
   src="../assets/img/cart.png"

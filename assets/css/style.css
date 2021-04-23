@@ -337,3 +337,41 @@ main {
     font-size: 18px;
     text-align: left;
 }
+
+
+  .detailimgitems {
+    margin: auto;
+    text-align: center;
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 90%;
+    height: 350px;
+  }
+  
+  .detailcardtext {
+    padding: 2px 16px;
+  }
+
+  @media screen and (max-width: 879px) {
+      .detailimgitems {
+        margin: auto;
+        text-align: center;
+        display: block;
+        border-radius: 5px 5px 0 0;
+        width: 90%;
+        height: 220px;
+        max-width: 200px;
+      }
+  }
+
+  /* footer */
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(59, 59, 59);
+    color: white;
+    text-align: center;
+  }

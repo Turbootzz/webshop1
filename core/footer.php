@@ -1,4 +1,8 @@
-<!-- hier kan een footer worden geplaatst -->
+<!-- the footer -->
+
+<footer>
+<p>Phonium - Thijs Herman</p>
+</footer>
     
 </body>
 </html>

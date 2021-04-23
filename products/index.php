@@ -33,9 +33,9 @@ if($productqry === false) {
             <div class="cards">
             <a href="<?php echo BASEURL;?>products/<?php echo substr($catimageName, 0, -3);?>php"><article class="card"> <!-- I used a substr so it will remove the last 3 characters so the URL wont have spaces or will be wrong -->
                 <h3><?php echo $categoryNameProduct;?></h3>
-                    <img class="imgitems" src="<?php echo BASEURL;?>assets/img/<?php echo $catimageName?>" alt="<?php echo $categoryNameProduct?>">
+                    <img class="detailimgitems" src="<?php echo BASEURL;?>assets/img/<?php echo $catimageName?>" alt="<?php echo $categoryNameProduct?>">
         
-                    <div class="cardtext">
+                    <div class="detailcardtext">
                     <figcaption>Click here</figcaption>
                 </div>
             </article></a>

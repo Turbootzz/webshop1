@@ -43,7 +43,18 @@
 
 </div>
 <br>
-
+<?php
+$productsql = "SELECT product.price AS productPrice FROM product WHERE product.active = 1 AND product.product_id = 5";
+// the last number resembles which product it takes
+$productqry = $con->prepare($productsql);
+if($productqry === false) {
+    echo mysqli_error($con);
+} else{
+    $productqry->bind_result($productPrice);
+    if($productqry->execute()){
+        $productqry->store_result();
+        while($productqry->fetch()){
+            ?>
 <div class="detailtext">
     <h1>Huawei P20 Pro</h1>
     <hr>
@@ -58,6 +69,7 @@
     Storage: 128GB, 256GB<br>
     Camera: 40 MP<br>
     Battery: Li-Po 4000 mAh, non-removable, Fast charging 22.5W, 58% in 30 min (advertised)<br>
+    Price: €<?php echo $productPrice?>
 </p>
 </div>
 
@@ -72,9 +84,14 @@
 
 <!-- Specify details about the item that buyers will purchase. -->
 <input type="hidden" name="item_name" value="Huawei P20 PRO"> <!-- Change product name!-->
-<input type="hidden" name="amount" value="174"> <!-- Price !-->
+<input type="hidden" name="amount" value="<?php echo $productPrice?>"> <!-- Price !-->
 <input type="hidden" name="currency_code" value="EUR">
-
+<?php
+        }
+    }
+    $productqry->close();
+}
+?>
 <!-- Display the payment button. -->
 <input type="image" name="submit" width="20%" height="20%"
   src="../assets/img/cart.png"
