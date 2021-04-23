@@ -17,7 +17,7 @@
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12.png" style="width:70%" alt="apple">
+  <img class="img" src="../assets/img/huaweip40pro.png" style="width:82%" alt="huawei">
   <figcaption><p class="text">Front and Back</p></figcaption>
   </figure>
 </div>
@@ -25,16 +25,16 @@
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12-2.png" style="width:100%" alt="apple">
-  <figcaption><p class="text">Colours</p></figcaption>
+  <img class="img" src="../assets/img/huaweip40pro-2.png" style="width:62%" alt="huawei">
+  <figcaption><p class="text">Front and Back</p></figcaption>
   </figure>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12-3.png" style="width:90%" alt="apple">
-  <figcaption><p class="text">Front Colours</p></figcaption>
+  <img class="img" src="../assets/img/huaweip40pro-3.png" style="width:90%" alt="huawei">
+  <figcaption><p class="text">Front and Back</p></figcaption>
   </figure>
 </div>
 
@@ -45,19 +45,19 @@
 <br>
 
 <div class="detailtext">
-    <h1>iPhone 12</h1>
+    <h1>Huawei P40 Pro</h1>
     <hr>
     <h3 class="titlespecs">Specifications</h3>
-    <p>Resolution: 1284 x 2778<br>
-    Size: 6.7 inches<br>
-    OS: iOS<br>
-    Chipset: Apple A14 Bionic (5nm)<br>
-    CPU: Hexa-core<br>
-    GPU: Apple GPU (4-core graphics)<br>
-    RAM: 6GB<br>
+    <p>Resolution: 1200 x 2640 (90hz)<br>
+    Size: 6.58 inches<br>
+    OS: Android<br>
+    Chipset: Kirin 990 5G (7 nm+)<br>
+    CPU: Octa-core<br>
+    GPU: Mali-G76 MP16<br>
+    RAM: 8GB<br>
     Storage: 128GB, 256GB or 512GB<br>
-    Camera: Dual 12 MP<br>
-    Battery: 3687 mAh, Fast charging 20W, 50% in 30 min (advertised)<br>
+    Camera: 50 MP<br>
+    Battery: Li-Po 4200 mAh, non-removable, Fast charging 40W, Fast wireless charging 27W, Fast reverse wireless charging 27W<br>
 </p>
 </div>
 
@@ -71,8 +71,8 @@
 <input type="hidden" name="add" value="1">
 
 <!-- Specify details about the item that buyers will purchase. -->
-<input type="hidden" name="item_name" value="iPhone 12"> <!-- Change product name!-->
-<input type="hidden" name="amount" value="900"> <!-- Price !-->
+<input type="hidden" name="item_name" value="Huawei P40 PRO"> <!-- Change product name!-->
+<input type="hidden" name="amount" value="240"> <!-- Price !-->
 <input type="hidden" name="currency_code" value="EUR">
 
 <!-- Display the payment button. -->

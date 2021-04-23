@@ -17,7 +17,7 @@
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12.png" style="width:70%" alt="apple">
+  <img class="img" src="../assets/img/pixel4.png" style="width:70%" alt="google">
   <figcaption><p class="text">Front and Back</p></figcaption>
   </figure>
 </div>
@@ -25,16 +25,16 @@
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12-2.png" style="width:100%" alt="apple">
-  <figcaption><p class="text">Colours</p></figcaption>
+  <img class="img" src="../assets/img/pixel4-2.png" style="width:80%" alt="google">
+  <figcaption><p class="text">Front and Back</p></figcaption>
   </figure>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <figure>
-  <img class="img" src="../assets/img/iphone12-3.png" style="width:90%" alt="apple">
-  <figcaption><p class="text">Front Colours</p></figcaption>
+  <img class="img" src="../assets/img/pixel4-3.png" style="width:40%" alt="google">
+  <figcaption><p class="text">Front</p></figcaption>
   </figure>
 </div>
 
@@ -45,19 +45,19 @@
 <br>
 
 <div class="detailtext">
-    <h1>iPhone 12</h1>
+    <h1>Pixel 4</h1>
     <hr>
     <h3 class="titlespecs">Specifications</h3>
-    <p>Resolution: 1284 x 2778<br>
-    Size: 6.7 inches<br>
-    OS: iOS<br>
-    Chipset: Apple A14 Bionic (5nm)<br>
-    CPU: Hexa-core<br>
-    GPU: Apple GPU (4-core graphics)<br>
+    <p>Resolution: 1080 x 2280<br>
+    Size: 5.7 inches<br>
+    OS: Android<br>
+    Chipset: Qualcomm SM8150 Snapdragon 855 (7 nm)<br>
+    CPU: Octa-core (1x2.84 GHz Kryo 485 & 3x2.42 GHz Kryo 485 & 4x1.78 GHz Kryo 485)<br>
+    GPU: Adreno 640<br>
     RAM: 6GB<br>
-    Storage: 128GB, 256GB or 512GB<br>
-    Camera: Dual 12 MP<br>
-    Battery: 3687 mAh, Fast charging 20W, 50% in 30 min (advertised)<br>
+    Storage: 64GB or 128GB<br>
+    Camera: 12.2 MP<br>
+    Battery: 2800 mAh<br>
 </p>
 </div>
 
@@ -71,8 +71,8 @@
 <input type="hidden" name="add" value="1">
 
 <!-- Specify details about the item that buyers will purchase. -->
-<input type="hidden" name="item_name" value="iPhone 12"> <!-- Change product name!-->
-<input type="hidden" name="amount" value="900"> <!-- Price !-->
+<input type="hidden" name="item_name" value="Pixel 4"> <!-- Change product name!-->
+<input type="hidden" name="amount" value="600"> <!-- Price !-->
 <input type="hidden" name="currency_code" value="EUR">
 
 <!-- Display the payment button. -->
