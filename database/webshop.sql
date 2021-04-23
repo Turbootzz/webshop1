@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 apr 2021 om 15:14
+-- Gegenereerd op: 23 apr 2021 om 06:55
 -- Serverversie: 10.4.6-MariaDB
 -- PHP-versie: 7.3.9
 
@@ -67,6 +67,30 @@ INSERT INTO `category` (`category_id`, `name`, `description`, `active`) VALUES
 (3, 'Huawei', 'Phones from Huawei', 1),
 (4, 'OnePlus', 'Phones from OnePlus', 1),
 (5, 'Google', 'Phones from Google', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `category_image`
+--
+
+CREATE TABLE `category_image` (
+  `category_image_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `category_image` varchar(255) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `category_image`
+--
+
+INSERT INTO `category_image` (`category_image_id`, `category_id`, `category_image`, `active`) VALUES
+(1, 1, 'apple.png', 1),
+(2, 2, 'samsung.png', 1),
+(3, 3, 'huawei.png', 1),
+(4, 4, 'oneplus.png', 1),
+(5, 5, 'google.png', 1);
 
 -- --------------------------------------------------------
 
@@ -143,15 +167,16 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `active`) VALUES
-(1, 1, 'arstid.jpg', 1),
-(2, 2, 'buitenlamp.jpg', 1),
-(3, 3, 'gans.jpg', 1),
-(4, 4, 'giraf.jpg', 1),
-(5, 5, 'hektar.jpg', 1),
-(6, 6, 'jesse.jpg', 1),
-(7, 7, 'lampje.jpg', 1),
-(8, 8, 'llahra.jpg', 1),
-(9, 9, 'struisvogel.jpg', 1);
+(1, 1, 'iphone12.png', 1),
+(2, 2, 'iphonese.png', 1),
+(3, 3, 'samsungs20.png', 1),
+(4, 4, 'samsungs10.png', 1),
+(5, 5, 'huaweip20pro.png', 1),
+(6, 6, 'huaweip40pro.png', 1),
+(7, 7, 'oneplus9.png', 1),
+(8, 8, 'oneplus6t.png', 1),
+(9, 9, 'pixel5.png', 1),
+(10, 10, 'pixel4.png', 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -168,6 +193,12 @@ ALTER TABLE `admin_user`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexen voor tabel `category_image`
+--
+ALTER TABLE `category_image`
+  ADD PRIMARY KEY (`category_image_id`);
 
 --
 -- Indexen voor tabel `customer`
@@ -204,6 +235,12 @@ ALTER TABLE `category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT voor een tabel `category_image`
+--
+ALTER TABLE `category_image`
+  MODIFY `category_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT voor een tabel `customer`
 --
 ALTER TABLE `customer`
@@ -219,7 +256,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `product_image`
 --
 ALTER TABLE `product_image`
-  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `product_image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
